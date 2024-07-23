@@ -3,10 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ask Me Anything</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Message Box</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color:#2C3E50 ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        fieldset {
+            border: 2px solid #333;
+            width: 400px;
+            height: 300px;
+            border-radius: 20px;
+            text-align: center;
+            background-color: #ECF0F1 ;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn1 {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 80px;
+            height: 35px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn1:hover {
+            background-color: #45a049;
+        }
+        .area {
+            width: 80%;
+            height: 40px;
+            margin-top: 20px;
+            border: 2px solid #333;
+            background-color: #f9f9f9;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .border {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h3 {
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="border">
+        <fieldset>
+            
+            <h3>Ask Me a Question</h3>
+            <input type="text" class="area" id="in" placeholder="Type Something...">
+            <div class="btn">
+                <button class="btn1" onclick="accept()">Accept</button>
+                <button class="btn1" onclick="decline()">Decline</button>
+            </div>
+        </fieldset>
+    </div>
+    <script>
+        function decline(){
+            alert("Question Declined");
+        }
+
+        let questions = [
+            "how old are you",
+            "what is your name",
+            "are you happy right now",
+            "what is your profession",
+            "are you a programmer",
+            "how many languages do you know",
+            "are you an engineer",
+            "what is your age",
+            "who is the current owner of tesla",
+            "who is the prime minister of india"
+        ];
+
+        function accept(){
+            let question = document.querySelector("#in").value;
+            question = question.toLowerCase();
+            if(questions.includes(question)) {
+                window.alert("Your question accepted");
+            } else {
+                window.alert("Your question is rejected Chief");
+            }
+        }
+    </script>
 </body>
 </html>
